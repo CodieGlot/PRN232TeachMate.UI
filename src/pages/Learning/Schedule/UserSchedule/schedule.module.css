@@ -1,0 +1,70 @@
+.card {
+  --bg: linear-gradient(135deg, #0ea5e9, #87ceeb);
+  --border: skyblue;
+  --hover-bg: linear-gradient(135deg, #FFE5F4, #FFCCE0);
+  --hover-text: #E50087;
+  --text: white;
+  max-width: 23ch;
+  text-align: center;
+  background: var(--bg);
+  padding: 1.5em;
+  padding-block: 1.8em;
+  border-radius: 5px;
+  position: absolute;
+  overflow: hidden;
+  transition: .3s cubic-bezier(.6,.4,0,1),transform .15s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  border: solid 1px var(--border);
+  color: var(--text)
+}
+
+.card__body {
+  /* color: #464853; */
+  line-height: 1.5em;
+  font-size: 1em;
+}
+
+.card > :not(span) {
+  transition: .3s cubic-bezier(.6,.4,0,1);
+}
+
+.card > strong {
+  display: block;
+  font-size: 1rem;
+  margin-top: 5px;
+  
+}
+
+.card span {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--hover-text);
+  border-radius: 5px;
+  font-weight: bold;
+  top: 100%;
+  transition: all .3s cubic-bezier(.6,.4,0,1);
+}
+
+.card:hover span {
+  top: 0;
+  font-size: 1.2em;
+ 
+}
+
+.card:hover {
+  background: var(--hover-bg);
+  border: none;
+}
+
+.card:hover>div,.card:hover>strong {
+  opacity: 0;
+}

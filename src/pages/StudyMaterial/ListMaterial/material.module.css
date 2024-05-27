@@ -1,0 +1,72 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes errorPopup {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(1.0rem);
+  }
+}
+
+.fade-in-new {
+  /* animation: errorPopup 0.5s ease-in-out;
+  transform: translateY(1.0rem); */
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+
+}
+
+.cssbuttons-io-button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0.8em 1.5em 0.8em 1.2em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(0deg, #38bdf8 0%, #6366f1 100%);
+    border: none;
+    /* box-shadow: 0 0.7em 1.5em -0.5em #6366f1; */
+    letter-spacing: 0.05em;
+    border-radius: 20em;
+    margin: 10px;
+  }
+  
+  .cssbuttons-io-button svg {
+    margin-right: 8px;
+  }
+  
+  .cssbuttons-io-button:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em rgb(149, 91, 255);
+  }
+  
+  .cssbuttons-io-button:active {
+    box-shadow: 0 0.3em 1em -0.5em rgb(160, 109, 255);
+  }
+
+  .content-to-blur {
+    filter: blur(5px); 
+    pointer-events: none; 
+    opacity: 0.5; 
+}
+
+.payment-reminder {
+  position: fixed; 
+    top: 20vh; 
+    left: 45%; 
+    z-index: 9999; 
+} 

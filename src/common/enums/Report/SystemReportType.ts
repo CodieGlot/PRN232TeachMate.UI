@@ -1,0 +1,26 @@
+export enum SystemReportType {
+  // Login ,
+  // Profile ,
+  // LearningModule ,
+  // Resources ,
+  // Schedule ,
+  // Search ,
+  // Feedback ,
+  // Notification ,
+  // Payment ,
+  // Other 
+  SlowLoadingTimes,
+  BrokenLinks,
+  LoginIssues,
+  AuthenticationIssues,
+  FormSubmissionErrors,
+  CompatibilityIssues,
+  SecurityConcerns,
+  PaymentProcessingErrors,
+  ContentDisplayProblems,
+  SearchFunctionalityIssues,
+  ErrorMessages,
+  AccessibilityIssues,
+  UserInterfaceBugs,
+  Other
+}

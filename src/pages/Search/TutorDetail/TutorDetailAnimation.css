@@ -1,0 +1,29 @@
+.guiding-arrow {
+    position: absolute;
+    top: -20px;
+    right: 50%;
+    width: 20px;
+    height: 20px;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMCIgZmlsbD0iIzAwMCI+PHBhdGggZD0iTTAsMTAgbDUtN3YtM2gydjNoMnYzaDJ2NHY0eiIgZmlsbD0iIzAwMDAiPjwvcGF0aD48L3N2Zz4=') no-repeat center center;
+    animation: bounce 2s infinite;
+    transform: translateX(50%);
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
