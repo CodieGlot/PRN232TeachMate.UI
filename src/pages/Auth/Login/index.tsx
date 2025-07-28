@@ -263,7 +263,7 @@ export function Login() {
             </div>
             <div className="md:h-full max-md:mt-10  rounded-xl ">
               <img
-                src="/src/assets/login-bg.png"
+                src="https://cdni.iconscout.com/illustration/premium/thumb/login-10299071-8333958.png"
                 className="w-full h-full object-contain"
                 alt="login-image"
               />

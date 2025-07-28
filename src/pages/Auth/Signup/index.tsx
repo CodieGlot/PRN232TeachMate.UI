@@ -143,7 +143,7 @@ export function Signup() {
         <div className="grid md:grid-cols-2 items-center gap-8 h-full">
           <div className="max-md:order-1 p-4">
             <img
-              src="/src/assets/login-bg.png"
+              src="https://cdni.iconscout.com/illustration/premium/thumb/login-10299071-8333958.png"
               className="lg:max-w-[90%] w-full h-full object-contain block mx-auto"
               alt="login-image"
             />
