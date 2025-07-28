@@ -35,8 +35,6 @@ export function UpdateLearnerDetail() {
       .matches(/^[a-zA-Z0-9\s]*$/, "display name not have special symbols"),
     email: Yup.string()
       .email('Invalid email format'),
-    phoneNumber: Yup.string()
-      .matches(/^0\d{9}$/, 'Phone number must begin with 0 and be digits only, up to 10 characters')
   });
   const initialFormValues: UpdateFormValues = {
     displayName: user?.displayName || "",
