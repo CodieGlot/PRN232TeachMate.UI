@@ -24,81 +24,88 @@ export function LearningSessionDetail() {
             try {
                 const data = await ScheduleService.getLearningSessionById(id);
                 setLearningSession(data);
-            }
-            catch (err) {
+            } catch (err) {
                 console.error("viewLearningSessionDetail failed:", err);
 
                 if (axios.isAxiosError(err)) {
-                  const axiosError = err as AxiosError<any>; // Use any for generic AxiosError
-          
-                  if (axiosError.response) {
-                    const { data } = axiosError.response;
-          
-                    if (data) {
-                      if (data.errors) {
-                        // Handle validation errors
-                        Object.values(data.errors).forEach((errMsgList) => {
-                          (errMsgList as string[]).forEach((errMsg: string) => {
-                            toast.error(errMsg);
-                          });
-                        });
-                      } else if (data.message) {
-                        // Handle API exceptions
-                        toast.error(data.message);
-                      }
-                    } else {
-                      toast.error("An unknown error occurred.");
-                    }
-                  }
-                } else {
-                  toast.error("An unexpected error occurred.");
-                }
+                    const axiosError = err as AxiosError<any>;
 
+                    if (axiosError.response) {
+                        const { data } = axiosError.response;
+
+                        if (data?.errors) {
+                            Object.values(data.errors).forEach((errMsgList) => {
+                                (errMsgList as string[]).forEach((errMsg: string) => {
+                                    toast.error(errMsg);
+                                });
+                            });
+                        } else if (data?.message) {
+                            toast.error(data.message);
+                        } else {
+                            toast.error("An unknown error occurred.");
+                        }
+                    }
+                } else {
+                    toast.error("An unexpected error occurred.");
+                }
             }
         };
 
-        viewLearningSessionDetail(), []
-    })
+        viewLearningSessionDetail();
+    }, [id]); // <- Add dependencies here
 
     const handleParticipateLearningSession = async () => {
+        let newTab: Window | null = null;
+
         try {
-            if (id != null) {
-                const data = await ScheduleService.participateLearningSession(id);
-                window.open(data, '_blank');
+            if (!learningSession?.linkMeet) {
+                toast.error("Meet link is not available.");
+                return;
             }
-            
-        }
-        catch (err) {
-            console.error("Error participating learning session:", err);
+
+            // Open blank tab immediately to avoid popup blocker
+            newTab = window.open('', '_blank');
+
+            // Call API to register participation (does not return anything)
+            await ScheduleService.participateLearningSession(learningSession.id);
+
+            // Navigate to the Meet link
+            if (newTab) {
+                newTab.location.href = learningSession.linkMeet;
+            } else {
+                // Fallback if popup was blocked
+                window.location.href = learningSession.linkMeet;
+            }
+        } catch (err) {
+            console.error("Error participating in learning session:", err);
+
+            if (newTab) {
+                newTab.close(); // Close tab if something failed
+            }
 
             if (axios.isAxiosError(err)) {
-              const axiosError = err as AxiosError<any>; 
-      
-              if (axiosError.response) {
-                const { data } = axiosError.response;
-      
-                if (data) {
-                  if (data.errors) {
-                    // Handle validation errors
-                    Object.values(data.errors).forEach((errMsgList) => {
-                      (errMsgList as string[]).forEach((errMsg: string) => {
-                        toast.error(errMsg);
-                      });
-                    });
-                  } else if (data.message) {
-                    // Handle API exceptions
-                    toast.error(data.message);
-                  }
-                } else {
-                  toast.error("An unknown error occurred.");
-                }
-              }
-            } else {
-              toast.error("An unexpected error occurred.");
-            }
+                const axiosError = err as AxiosError<any>;
 
+                if (axiosError.response) {
+                    const { data } = axiosError.response;
+
+                    if (data?.errors) {
+                        Object.values(data.errors).forEach((errMsgList) => {
+                            (errMsgList as string[]).forEach((errMsg: string) => {
+                                toast.error(errMsg);
+                            });
+                        });
+                    } else if (data?.message) {
+                        toast.error(data.message);
+                    } else {
+                        toast.error("An unknown error occurred.");
+                    }
+                }
+            } else {
+                toast.error("An unexpected error occurred.");
+            }
         }
-    }
+    };
 
     return (
         <>
