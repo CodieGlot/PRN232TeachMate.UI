@@ -89,15 +89,19 @@ export const ScheduleService = {
         return learningSession;
       },
 
-      participateLearningSession:  async (learningSessionId: string) : Promise<string> => {
-        const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/Schedule/ParticipateLearningSession?learningSessionId=`+learningSessionId,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            }
-          });
-          const linkMeet: string = response.data;
-          return linkMeet;
+      participateLearningSession: async (learningSessionId: number): Promise<void> => {
+          try {
+              await axios.get(
+                  `${import.meta.env.VITE_SERVER_URL}/api/Schedule/ParticipateLearningSession?learningSessionId=${learningSessionId}`,
+                  {
+                      headers: {
+                          Authorization: `Bearer ${token}`,
+                      },
+                  }
+              );
+          } catch (error) {
+              console.error("Error in participateLearningSession:", error);
+              throw error; // rethrow to be caught by the caller
+          }
       }
-     
 };
