@@ -37,7 +37,7 @@ export function Login() {
     username: Yup.string()
       .required("Username is required")
       .min(5, "Username must be at least 5 characters")
-      .max(15, "Username must be at maximum 15 characters"),
+      .max(100, "Username must be at maximum 100 characters"),
     password: Yup.string()
       .required("Password is required")
       .min(6, "Password must be at least 6 characters")
