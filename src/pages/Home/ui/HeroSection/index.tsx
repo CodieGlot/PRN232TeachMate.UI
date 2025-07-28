@@ -150,7 +150,7 @@ export function HeroSection() {
                   <span className="sr-only">Watch our video to learn more</span>
                   <img
                     className="w-full"
-                    src="https://i.ibb.co/jW6LPMP/study.jpg"
+                    src="https://static.vecteezy.com/system/resources/previews/002/173/392/non_2x/student-studying-at-home-free-vector.jpg"
                     alt=""
                   />
                 </button>

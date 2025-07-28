@@ -34,7 +34,7 @@ export function Category() {
                   >
                     <span aria-hidden="true" className="absolute inset-0">
                       <img
-                        src="https://i.ibb.co/p2TKqwG/Maths.jpg"
+                        src="https://static.vecteezy.com/system/resources/previews/013/115/384/non_2x/cartoon-maths-elements-background-education-logo-vector.jpg"
                         alt=""
                         className="h-full w-full object-cover object-center"
                       />
@@ -53,7 +53,7 @@ export function Category() {
                   >
                     <span aria-hidden="true" className="absolute inset-0">
                       <img
-                        src="https://i.ibb.co/VvprhGs/english.png"
+                        src="https://nnvh.tnus.edu.vn/uploads/files/Tailieu/learning-english-doodle-set-language-school-in-sketch-style-online-language-education-course-hand-drawn-illustration-isolated-on-white-background-vector.jpg"
                         className="h-full w-full object-cover object-center"
                       />
                     </span>
@@ -71,7 +71,7 @@ export function Category() {
                   >
                     <span aria-hidden="true" className="absolute inset-0">
                       <img
-                        src="https://i.ibb.co/0FV16rR/physic.webp"
+                        src="https://media.istockphoto.com/id/936903524/vector/blackboard-inscribed-with-scientific-formulas-and-calculations-in-physics-and-mathematics-can.jpg?s=612x612&w=0&k=20&c=sRLsJbHUVOYvZ_M16hti4fF9NM0RysfjAPUQrCJ8o4U="
                         alt=""
                         className="h-full w-full object-cover object-center"
                       />
@@ -90,7 +90,7 @@ export function Category() {
                   >
                     <span aria-hidden="true" className="absolute inset-0">
                       <img
-                        src="https://i.ibb.co/0ZWc7B3/chemistry.jpg"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6MKg5BdiytlKGrsqEUoKTtrInhp3j9G2SrA&s"
                         alt=""
                         className="h-full w-full object-cover object-center"
                       />
@@ -109,7 +109,7 @@ export function Category() {
                   >
                     <span aria-hidden="true" className="absolute inset-0">
                       <img
-                        src="https://i.ibb.co/BzLNrHf/geography.jpg"
+                        src="https://t4.ftcdn.net/jpg/02/43/47/67/360_F_243476769_d15WIB1ERQTzvRW51NTMOi5guTvoBOrf.jpg"
                         alt=""
                         className="h-full w-full object-cover object-center"
                       />
