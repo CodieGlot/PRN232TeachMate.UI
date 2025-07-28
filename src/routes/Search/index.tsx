@@ -3,11 +3,11 @@ import { SearchTutor, SearchClass, SearchCategory, TutorDetail } from "../../pag
 const searchRoutes = [
   {
     path: "/searchClass",
-    element: <SearchClass />,
+    element: <SearchClass searchQuery="" />,
   },
   {
     path: "/searchTutor",
-    element: <SearchTutor />,
+    element: <SearchTutor searchQuery="" />,
   },
   {
     path: "/search",

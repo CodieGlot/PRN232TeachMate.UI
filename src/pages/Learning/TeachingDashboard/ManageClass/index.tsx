@@ -8,7 +8,6 @@ import { ListRequestsForClass } from '../../LearningModuleRequest';
 import { LearnersInClass } from '../ListLearners';
 import { ReceiveFeedback } from '../../../Feedback';
 import { useSearchParams } from 'react-router-dom';
-import { Step } from '../../../Payment/Step';
 import { ListMaterial } from '../../../StudyMaterial';
 
 export function ManageClass() {
