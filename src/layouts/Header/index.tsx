@@ -52,7 +52,7 @@ export function Header() {
             <span className="sr-only">Resort Hub Logo</span>
             <img
               className="h-12 w-auto indigo-400"
-              src="https://svgur.com/i/18J9.svg"
+              src="https://static.vecteezy.com/system/resources/thumbnails/000/165/931/small/19.jpg"
               alt="Logo"
             />
           </a>
